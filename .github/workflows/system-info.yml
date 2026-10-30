@@ -1,0 +1,25 @@
+name: System Information Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Checking Runner Information
+        run: echo "Checking Runner Information"
+
+      - name: Display Date and Time
+        run: date
+
+      - name: Display Current Working Directory
+        run: pwd
+
+      - name: List Files
+        run: ls -la
